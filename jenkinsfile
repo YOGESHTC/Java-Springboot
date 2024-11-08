@@ -47,7 +47,7 @@ pipeline {
          stage('docker push') {
             steps {
              script {
-                withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker') {
+                withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                     sh 'docker tag java-spring YOGESHTC/java-spring'
                     sh 'docker push YOGESHTC/java-spring'
                   }
